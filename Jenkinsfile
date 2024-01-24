@@ -24,5 +24,15 @@ pipeline {
                 sh 'npm test'
             }
         }
+        stage('Deploy') {
+             steps {
+                script {
+                    sh '/root/hello_hapi'
+                    sh 'git pull'
+                    // Or use Docker Compose or a deployment tool specific to your environment
+                    // ...
+                }
+             }
+         }
     }
 }

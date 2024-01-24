@@ -2,15 +2,16 @@
 
 pipeline {
 
-    agent {
-        docker {
-            image 'node'
-            args '-u root'
-        }
-    }
+    agent None
 
     stages {
         stage('Build & Test'){
+            agent {
+                docker {
+                    image 'node'
+                    args '-u root'
+                        }
+            }
             stages {
                     stage('Build') {
                         steps {
@@ -30,6 +31,7 @@ pipeline {
         }
         
         stage('Deploy') {
+            agent any
              steps {
                 script {
                     sh '/root/hello_hapi'

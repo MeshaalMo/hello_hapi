@@ -10,20 +10,25 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building...'
-                sh 'npm install'
-                echo 'Done...'
-
+        stage('Build & Test'){
+            stages {
+                    stage('Build') {
+                        steps {
+                            echo 'Building...'
+                            sh 'npm install'
+                            echo 'Done...'
+            
+                        }
+                    }
+                    stage('Test') {
+                        steps {
+                            echo 'Testing...'
+                            sh 'npm test'
+                        }
+                    }
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                sh 'npm test'
-            }
-        }
+        
         stage('Deploy') {
              steps {
                 script {

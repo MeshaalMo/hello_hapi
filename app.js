@@ -22,14 +22,14 @@ Server.route({
 
 // if (!module.parent) {
 
-    Server.start((err) => {
+Server.start((err) => {
 
-        if (err) {
-            throw err;
-        }
+    if (err) {
+        throw err;
+    }
 
-        console.log(`Server running at: ${Server.info.uri}`);
-    });
+    console.log(`Server running at: ${Server.info.uri}`);
+});
 // }
 
 module.exports = Server;

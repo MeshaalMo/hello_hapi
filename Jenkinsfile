@@ -2,7 +2,7 @@
 
 pipeline {
 
-    agent None
+    agent none
 
     stages {
         stage('Build & Test'){

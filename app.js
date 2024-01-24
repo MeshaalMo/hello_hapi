@@ -20,7 +20,7 @@ Server.route({
 
 // don't start server if this file was required
 
-if (!module.parent) {
+// if (!module.parent) {
 
     Server.start((err) => {
 
@@ -30,6 +30,6 @@ if (!module.parent) {
 
         console.log(`Server running at: ${Server.info.uri}`);
     });
-}
+// }
 
 module.exports = Server;

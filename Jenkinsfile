@@ -31,7 +31,7 @@ pipeline {
         }
         
         stage('Deploy') {
-            agent any
+            agent {label 'Built-In Node'}
              steps {
                 script {
                     sh 'cd /root/hello_hapi'
